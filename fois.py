@@ -8,15 +8,14 @@ from selenium.webdriver.common.keys import Keys
 
 
 
-"""
 """ 'ARRIVAL' """
 
 # url 바꾸면 다른 공항도 가능
 url = 'https://ubikais.fois.go.kr:8030/sysUbikais/biz/airport/airportinfo?mode=&airport=RKSI'
 
 # 날짜 바꿔가며 데이터 가져오기
-start = '2018-12-15'
-end = '2018-12-31'
+start = '2020-01-01'
+end = '2020-01-02'
 
 # date range 만들기
 datelist = pd.date_range(start, end).astype(str).to_list()
@@ -244,7 +243,6 @@ for date in datelist:
     # fois 사이트야 로딩 좀 바로 되라
     time.sleep(3)
 
-"""
 
 
 
@@ -253,8 +251,8 @@ for date in datelist:
 url = 'https://ubikais.fois.go.kr:8030/sysUbikais/biz/airport/airportinfo?mode=&airport=RKSI'
 
 # 날짜 바꿔가며 데이터 가져오기
-start = '2018-12-26'
-end = '2018-12-31'
+start = '2020-01-01'
+end = '2020-01-02'
 
 # date range 만들기
 datelist = pd.date_range(start, end).astype(str).to_list()
@@ -471,7 +469,8 @@ for date in datelist:
                               'Departure_ARR' : Departure_ARR,
                               'Departure_SCH' : Departure_SCH,
                               'Departure_ETD' : Departure_ETD,
-                              'Departure_ATD' : Departure_ATD  })
+                              'Departure_ATD' : Departure_ATD,
+                              'Departure_STT' : Departure_STT  })
     
     # csv로 저장
     Departure.to_csv(f'C:\\Users\\user\\proj\\TMA_capacity\\data\\FOIS\\Departure_{date}.csv') 
